@@ -22,6 +22,27 @@ public class Lectura<T>{
 		
 	}
 	
+	public int LongitudArchivo() {
+		int i = 0;
+		try {
+			Abrir();
+			while(Leer()!=null) {
+				i++;
+			}
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				Cerrar();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return i;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public T Leer() throws ClassNotFoundException, IOException{
 		try {

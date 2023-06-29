@@ -22,6 +22,7 @@ public class Escritura <T>{
 	public void Escribir(T objeto) throws IOException {
 		if(escritura != null) {
 			escritura.writeObject(objeto);
+			
 		}
 	}
 	

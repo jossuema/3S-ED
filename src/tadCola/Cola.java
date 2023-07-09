@@ -14,4 +14,8 @@ public interface Cola<T> extends Serializable{
     int numElemCola ();
     void invertirCola () throws ColaVacia;
     String getNombre();
+    T menorDato();
+	T mayorDato();
+	boolean busqueda(T dato);
+	T elementoFinal();
 }

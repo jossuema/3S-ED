@@ -13,5 +13,9 @@ public interface Pila<T> extends Serializable{
 	void imprimirPila ();
 	int numElemPila ();
 	String getNombre();
+	T menorDato();
+	T mayorDato();
+	boolean busqueda(T dato);
+	T elementoFinal();
 }
 

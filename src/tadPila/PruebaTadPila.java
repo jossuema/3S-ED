@@ -35,7 +35,7 @@ public class PruebaTadPila {
 		System.out.println(pila2.getNombre());
 		pila2.apilar(new Libro("Huasipungo", 200));
 		pila2.apilar(new Libro("Sex para dummies", 100));
-		pila2.apilar(new Libro("Estrcucturas de datos", 300));
+		pila2.apilar(new Libro("Estructuras de datos", 300));
 		pila2.imprimirPila();
 		System.out.println(pila2);
 		
@@ -43,10 +43,16 @@ public class PruebaTadPila {
 			System.out.println("La pila "+pila2.getNombre()+" tiene "+ AlgortimosPilas.contarPila(pila2));
 			AlgortimosPilas.sumergir(pila2, new Libro("Hola", 250));
 			pila2.imprimirPila();
+			System.out.println(pila2.menorDato());
+			System.out.println(pila2.busqueda(new Libro("Hola", 250)));
+			pila2.imprimirPila();
 		} catch (PilaVacia e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		
 	}
 
 }

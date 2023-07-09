@@ -1,11 +1,8 @@
 package tadCola;
 
-import practica5.Vehiculo;
-
 public class PruebaTadCola {
 	public static void main(String[] args) {
 		Cola<Integer> cola1 = new TadCola<>();
-		Cola<Vehiculo> cola2 = new TadCola<>("TAD DE CARROS");
 		
 		cola1.encolar(8);
 		cola1.encolar(7);
@@ -21,14 +18,12 @@ public class PruebaTadCola {
 			cola1.invertirCola();
 			System.out.println("Se invirtio la cosa");
 			cola1.imprimirCola();
+			System.out.println(cola1.busqueda(8));
+			cola1.imprimirCola();
 		} catch (ColaVacia e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		System.out.println(cola2.getNombre());
-		for (int i = 0; i < 4; i++) {
-			cola2.encolar(new Vehiculo());
-		}
 	}
 }

@@ -1,6 +1,6 @@
 package tadCola;
 
-public class TadCola<T> implements Cola<T> {
+public class TadCola<T extends Comparable<T>> implements Cola<T> {
 	/**
 	 * 
 	 */
@@ -125,5 +125,101 @@ public class TadCola<T> implements Cola<T> {
 			aux = aux.siguiente;
 		}
 		return msj.toString();
+	}
+	
+	/**
+     * Hace la llamada al metodo recursivo menorDato que devuelve el nodo con el dato menor que luego es devuelto
+     */
+    public T menorDato() {
+    	return menorDato(principio).dato;
+    }
+    
+    
+    /**
+     * Recorre recursivamente cada nodo de la cola desde el nodo principio
+     * Devuelve el nodo el cual su dato sea menor al comparado
+     * La clase con la que se use el TAD debe implementar el metodo compareTo de la interfaz Comparable
+     * @param aux
+     * @return
+     */
+    private NodoCola<T> menorDato(NodoCola<T> aux) {
+    	
+    	if(aux.siguiente==null) {
+    		return aux;
+    	}
+    	
+    	NodoCola<T> nodos = menorDato(aux.siguiente);
+    	
+    	if(nodos.dato.compareTo(aux.dato) < 0) {
+    		return nodos;
+    	}else {
+    		return aux;
+    	}
+    }
+    
+    /**
+     * Hace la llamada al metodo recursivo mayorDato que devuelve el nodo con el dato mayor que luego es devuelto
+     */
+    public T mayorDato() {
+    	return mayorDato(principio).dato;
+    }
+    
+    /**
+     * Recorre recursivamente cada nodo de la cola desde el nodo principio
+     * Devuelve el nodo el cual su dato sea mayor al comparado
+     * La clase con la que se use el TAD debe implementar el metodo compareTo de la interfaz Comparable
+     * @param aux
+     * @return
+     */
+    private NodoCola<T> mayorDato(NodoCola<T> aux) {
+    	
+    	if(aux.siguiente==null) {
+    		return aux;
+    	}
+    	
+    	NodoCola<T> nodos = menorDato(aux.siguiente);
+    	
+    	if(nodos.dato.compareTo(aux.dato) > 0) {
+    		return nodos;
+    	}else {
+    		return aux;
+    	}
+    }
+    
+    /**
+     * Hace la llamda al metodo recursivo busqueda
+     * Devuelve true si el elemento tiene los mismos atributos que un elemento dentro de la cola
+     */
+    public boolean busqueda(T dato) {
+    	return busqueda(dato, principio);
+    }
+    
+    /**
+     * Recive el dato y el nodo del dato que va a comparar.
+     * Itera por cada nodo de la cola
+     * El resultado del metodo dependera directamente de la implemetacion del metodo compareTo de la interfaz Comparable.
+     * Si el metodo compareTo devuelve cero es decir, encontro una igualdad el metodo devolvera true o de lo contrario false.
+     * @param dato
+     * @param aux
+     * @return
+     */
+    private boolean busqueda(T dato, NodoCola<T> aux) {
+    	
+    	if(dato.compareTo(aux.dato) == 0){
+    		return true;
+    	}
+    	
+    	if(aux.siguiente == null) {
+    		return false;
+    	}
+    	
+    	return busqueda(dato, aux.siguiente);
+    }
+    
+    /**
+     * El metodo devuelve directamente el dato final con la ayuda del nodoFinal sin la necesidad de implementar recursividad
+     */
+	public T elementoFinal() {
+		return fin.dato;
 	}
 }

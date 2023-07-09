@@ -1,6 +1,6 @@
 package tadPila;
 
-public class TadPila<T> implements Pila<T>{
+public class TadPila<T extends Comparable<T>> implements Pila<T>{
 	/**
 	 * 
 	 */
@@ -97,4 +97,106 @@ public class TadPila<T> implements Pila<T>{
         }
         return resul;
     }
+    
+    /**
+     * Hace la llamada al metodo recursivo menorDato que devuelve el nodo con el dato menor que luego es devuelto
+     */
+    public T menorDato() {
+    	return menorDato(pila).dato;
+    }
+    
+    
+    /**
+     * Recorre recursivamente cada nodo de la pila
+     * Devuelve el nodo el cual su dato sea menor al comparado
+     * La clase con la que se use el TAD debe implementar el metodo compareTo de la interfaz Comparable
+     * @param aux
+     * @return
+     */
+    private NodoPila<T> menorDato(NodoPila<T> aux) {
+    	
+    	if(aux.siguiente==null) {
+    		return aux;
+    	}
+    	
+    	NodoPila<T> nodos = menorDato(aux.siguiente);
+    	
+    	if(nodos.dato.compareTo(aux.dato) < 0) {
+    		return nodos;
+    	}else {
+    		return aux;
+    	}
+    }
+    
+    /**
+     * Hace la llamada al metodo recursivo mayorDato que devuelve el nodo con el dato mayor que luego es devuelto
+     */
+    public T mayorDato() {
+    	return mayorDato(pila).dato;
+    }
+    
+    /**
+     * Recorre recursivamente cada nodo de la pila
+     * Devuelve el nodo el cual su dato sea mayor al comparado
+     * La clase con la que se use el TAD debe implementar el metodo compareTo de la interfaz Comparable
+     * @param aux
+     * @return
+     */
+    private NodoPila<T> mayorDato(NodoPila<T> aux) {
+    	
+    	if(aux.siguiente==null) {
+    		return aux;
+    	}
+    	
+    	NodoPila<T> nodos = menorDato(aux.siguiente);
+    	
+    	if(nodos.dato.compareTo(aux.dato) > 0) {
+    		return nodos;
+    	}else {
+    		return aux;
+    	}
+    }
+    
+    /**
+     * Hace la llamda al metodo recursivo busqueda
+     * Devuelve true si el elemento tiene los mismos atributos que un elemento dentro de la cola
+     */
+    public boolean busqueda(T dato) {
+    	return busqueda(dato, pila);
+    }
+    
+    /**
+     * Recive el dato y el nodo del dato que va a comparar.
+     * Itera por cada nodo de la pila
+     * El resultado del metodo dependera directamente de la implemetacion del metodo compareTo de la interfaz Comparable.
+     * Si el metodo compareTo devuelve cero es decir, encontro una igualdad el metodo devolvera true o de lo contrario false.
+     * @param dato
+     * @param aux
+     * @return
+     */
+    private boolean busqueda(T dato, NodoPila<T> aux) {
+    	if(dato.compareTo(aux.dato) == 0){
+    		return true;
+    	}
+    	
+    	if(aux.siguiente == null) {
+    		return false;
+    	}
+    	
+    	return busqueda(dato, aux.siguiente);
+    }
+
+	@Override
+	public T elementoFinal() {
+		
+		return elementoFinal(pila);
+	}
+	
+	private T elementoFinal(NodoPila<T> aux) {
+		if(aux.siguiente == null) {
+			return aux.dato;
+    	}
+		
+		return elementoFinal( aux.siguiente);
+	}
 }

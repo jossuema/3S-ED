@@ -2,7 +2,7 @@ package tadPila;
 
 import java.io.Serializable;
 
-public class Libro implements Serializable{
+public class Libro implements Serializable, Comparable<Libro>{
 	/**
 	 * 
 	 */
@@ -32,5 +32,18 @@ public class Libro implements Serializable{
 		this.numPaginas = numPaginas;
 	}
 	
+	/**
+	 * Implementa el metodo de comparacion de la interfaz comparable
+	 * Devuelve numero positivo si el libro tiene mas paginas que el comparado
+	 * Devuelve numero negativo si el libro tiene menos paginas que el comparado
+	 * Devuelve 0 si ambos libros tienes las misma paginas
+	 */
+	@Override
+	public int compareTo(Libro o) {
+		if(this.titulo.compareTo(o.titulo) == 0) {
+			return this.numPaginas - o.numPaginas;
+		}
+		return this.titulo.compareTo(o.titulo);
+	}
 	
 }

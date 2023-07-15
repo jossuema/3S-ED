@@ -31,5 +31,16 @@ public class AlgortimosPilas {
 		
 	}
 
-
+	public static <T> T fondo(Pila<T> pila) throws PilaVacia {
+		if(pila.numElemPila()==1) {
+			return pila.cima();
+		}
+		
+		T elem = pila.desapilar();
+		T res =  fondo(pila);
+		pila.apilar(elem);
+		
+		return res;
+		
+	}
 }

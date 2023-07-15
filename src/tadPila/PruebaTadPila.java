@@ -12,7 +12,14 @@ public class PruebaTadPila {
 		pila1.apilar(5);
 		pila1.apilar(3);
 		
+		try {
+			System.out.println(AlgortimosPilas.fondo(pila1));
+		} catch (PilaVacia e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		pila1.imprimirPila();
+		
 		System.out.println(pila1.toString());
 		
 		try {

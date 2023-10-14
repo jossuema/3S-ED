@@ -1,5 +1,5 @@
 package Evaluacion02;
-import Algoritmos.Algoritmos;
+import algoritmos.Algoritmos;
 import tadCola.Cola;
 import tadCola.ColaVacia;
 import tadCola.TadCola;

@@ -1,4 +1,4 @@
-package Algoritmos;
+package algoritmos;
 
 import tadLista.Lista;
 import tadLista.TadLista;

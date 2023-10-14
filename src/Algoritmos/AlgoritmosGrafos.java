@@ -1,4 +1,4 @@
-package Algoritmos;
+package algoritmos;
 
 import grafos.Grafo;
 import grafos.GrafoLA;

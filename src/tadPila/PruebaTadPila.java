@@ -1,6 +1,6 @@
 package tadPila;
 
-import Algoritmos.AlgortimosPilas;
+import algoritmos.AlgortimosPilas;
 
 public class PruebaTadPila {
 

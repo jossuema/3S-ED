@@ -1,12 +1,12 @@
-package refuerzo2;
+package Refuerzo;
 
 import algoritmos.AlgoritmosGrafos;
-import grafos.GrafoLA;
+import grafos.GrafoMA;
 
-public class TallerGrafoLA {
+public class TallerGrafoMA {
 
 	public static void main(String[] args) {
-		GrafoLA grafo = new GrafoLA(15, true);// Dirigido -- true
+		GrafoMA grafo = new GrafoMA(15, true);// Dirigido -- true
 
 		// Grafo Dirigido
 		grafo.setNombre("Grafo 1");

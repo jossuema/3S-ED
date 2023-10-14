@@ -2,7 +2,8 @@ package circularesOrdenadas;
 
 import java.io.IOException;
 import java.util.Scanner;
-import Algoritmos.Algoritmos;
+
+import algoritmos.Algoritmos;
 import archivos.Escritura;
 import archivos.Lectura;
 

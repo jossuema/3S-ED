@@ -2,7 +2,7 @@ package CPE10;
 
 import java.io.IOException;
 
-import Algoritmos.AlgoritmosGrafos;
+import algoritmos.AlgoritmosGrafos;
 import grafos.GrafoMA;
 import tad.TADTeclado;
 

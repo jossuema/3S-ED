@@ -1,6 +1,6 @@
 package Evaluacion03;
-import Algoritmos.Algoritmos;
-import Algoritmos.AlgoritmosListas;
+import algoritmos.Algoritmos;
+import algoritmos.AlgoritmosListas;
 import tadLista.Lista;
 import tadLista.NodoLista;
 import tadLista.TadLista;

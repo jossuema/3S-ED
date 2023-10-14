@@ -3,7 +3,7 @@ package doblementeEnlazadasOrdenadas;
 import java.io.IOException;
 import java.util.Scanner;
 
-import Algoritmos.Algoritmos;
+import algoritmos.Algoritmos;
 import archivos.Escritura;
 import archivos.Lectura;
 import doblementeEnlazadasOrdenadas.Lista;

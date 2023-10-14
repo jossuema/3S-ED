@@ -1,4 +1,4 @@
-package Algoritmos;
+package algoritmos;
 
 public class Busqueda {
 	public static <T extends Comparable<T>> int buscarBinaria(T dato, T[] vector) {

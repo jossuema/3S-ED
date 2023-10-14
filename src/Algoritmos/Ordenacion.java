@@ -1,4 +1,4 @@
-package Algoritmos;
+package algoritmos;
 
 public class Ordenacion {
 	private static <T extends Comparable<T>> void intercambiar(T[] vector, int a, int b) {

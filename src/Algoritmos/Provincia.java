@@ -1,4 +1,4 @@
-package Algoritmos;
+package algoritmos;
 
 public enum Provincia {
 	//el orden+1 determina el n�mero que lo identifica en la c�dula

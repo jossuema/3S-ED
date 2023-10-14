@@ -1,4 +1,4 @@
-package refuerzo2;
+package Refuerzo;
 
 import algoritmos.AlgoritmosGrafos;
 import grafos.GrafoLA;

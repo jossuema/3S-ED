@@ -1,6 +1,6 @@
 package refuerzo2;
 
-import Algoritmos.AlgoritmosGrafos;
+import algoritmos.AlgoritmosGrafos;
 import grafos.GrafoMA;
 
 public class TallerGrafoMA {
